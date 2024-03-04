@@ -15,7 +15,8 @@ from transformers import BertConfig, BertTokenizer, BertModel, BertForMaskedLM, 
                          OPTConfig, OPTForCausalLM, \
                          ElectraConfig, ElectraForMaskedLM, ElectraTokenizer, \
                          GPTJConfig, GPTJForCausalLM, \
-			 DebertaConfig, DebertaTokenizer, DebertaForMaskedLM
+			 DebertaConfig, DebertaTokenizer, DebertaForMaskedLM, \
+			 DebertaV2Config, DebertaV2Tokenizer, DebertaV2ForMaskedLM
 from collections import namedtuple
 from yacs.config import CfgNode
 
@@ -89,6 +90,12 @@ _MODEL_CLASSES = {
 	"config": DebertaConfig, 
 	"tokenizer": DebertaTokenizer, 
 	"model": DebertaForMaskedLM, 
+	"wrapper": MLMTokenizerWrapper
+    }),
+    "deberta-v2": ModelClass(**{
+	"config": DebertaV2Config, 
+	"tokenizer": DebertaV2Tokenizer, 
+	"model": DebertaV2ForMaskedLM, 
 	"wrapper": MLMTokenizerWrapper
     }),
 }
